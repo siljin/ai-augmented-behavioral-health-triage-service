@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Map, GitBranch, LayoutDashboard, Target, Brain } from 'lucide-react';
+import { Map, GitBranch, LayoutDashboard, Target, Database, Brain } from 'lucide-react';
 import UserJourneyMaps from './components/UserJourneyMaps';
 import SystemArchitecture from './components/SystemArchitecture';
 import FeatureBreakdown from './components/FeatureBreakdown';
 import JobsToBeDone from './components/JobsToBeDone';
+import DataModelScoring from './components/DataModelScoring';
 
 export default function App() {
   const [activeView, setActiveView] = useState('journey');
@@ -13,6 +14,7 @@ export default function App() {
     { id: 'architecture', label: 'System Architecture', icon: GitBranch, component: SystemArchitecture },
     { id: 'features', label: 'Feature Breakdown', icon: LayoutDashboard, component: FeatureBreakdown },
     { id: 'jtbd', label: 'Jobs To Be Done', icon: Target, component: JobsToBeDone },
+    { id: 'datamodel', label: 'Data Model & Scoring', icon: Database, component: DataModelScoring },
   ];
 
   const ActiveComponent = views.find(v => v.id === activeView)?.component || UserJourneyMaps;
